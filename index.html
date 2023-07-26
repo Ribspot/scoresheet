@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+		 <link href="css/styl.css" rel="stylesheet" type="text/css"/>
+		 <link href="fontawesome/css/all.css" rel="stylesheet"/>
+               <link rel="icon" type="image/jpeg" sizes="100x100" href="cal.jpeg">
+	<title>ScoreSheet</title>
+
+</head>
+<style type="text/css">
+       *{
+              background-color: rgb(255, 171, 75);
+              font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+       }
+	
+.one{
+
+padding-left: 50px;
+}
+</style>
+<body>
+	<div class="container-fluid one">
+
+<div class="row mt-2">
+	<div class="col-md-4"><h2>Subject</h2></div>
+	<div class="col-md-4"><h2>Score</h2></div>
+	<div class="col-md-4"><h2>Grade</h2></div>
+</div>
+<div class="row">
+	<div class="col-md-4">English</div>
+	<div class="col-md-4"><input type="number" id='r' onchange='showGrade()' class="form-control mt-2"></div>
+	<div class="col-md-4"><input disabled type="text" class="form-control mt-2"  id="rr" ></div>
+</div>
+<div class="row">
+	<div class="col-md-4">Maths</div>
+	<div class="col-md-4"><input type="number" id='t' onchange='showGrade1()' class="form-control mt-2"></div>
+	<div class="col-md-4"><input  disabled type="text" class="form-control mt-2" id='tt'></div>
+
+
+</div>
+
+<div class="row">
+	<div class="col-md-4">Chemistry</div>
+	<div class="col-md-4"><input   type="number" id='y' onchange='showGrade2()'  class="form-control mt-2" id="che"></div>
+	<div class="col-md-4"><input disabled type="text" id='yy' class="form-control mt-2" id="dd"></div>
+
+</div>
+<div class="row">
+	
+	<div class="col-md-4">Biology</div>
+	<div class="col-md-4"><input type="number" id='u' onchange='showGrade3()'  class="form-control mt-2"></div>
+	<div class="col-md-4"><input disabled type="text" id='uu'class="form-control mt-2"></div>
+</div>
+<div class="row">
+	
+
+</div>
+<div class="row">
+	<div class="col-md-4">French</div>
+	<div class="col-md-4"><input type="number" id='i' onchange='showGrade4()'  class="form-control mt-2"></div>
+	<div class="col-md-4"><input  disabled type="text" id='ii' class="form-control mt-2"></div>
+</div>
+<div class="row mt-2">
+	<button class="btn btn-outline-success col-4 mt-2" onclick="total()">Get Result</button>
+	</div>
+<div class="row mt-2">
+	<div class="col-md-4"><span>TOTAL</span></div>
+	<div class="col-md-4"><span id="tl"></span></div>
+       <div class="col-md-4"></div>
+	
+</div>
+<div class="row mt-2">
+	
+	<div class="col-md-4"><span>Average</span></div>
+	<div class="col-md-4"><span id ="av"></span></div>
+       <div class="col-md-4"></div>
+</div>
+<div class="row mt-2">
+	<div class="col-md-4"><span >Remark</span></div>
+	<div class="col-md-4"><span  id="re"></span></div>
+       <div class="col-md-4"> <img id="img1" class="img-fluid"> </div>
+</div>
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+      function showGrade(){
+      var en=parseFloat(document.getElementById('r').value);
+      var grade;
+       if ((en>=70) && (en<=100)) {
+
+       	grade="A";
+       }
+        else if ((en>=60 )&&(en<=70)) {
+
+       	grade="B";
+       }
+       else if ((en>=50)&&(en<=60)) {
+
+       	grade="C";
+       }
+       else if ((en>=45)&&(en<=50)) {
+
+       	grade="D";
+       }
+        else if ((en>=40)&&(en<=45)) {
+
+       	grade="E";
+       }
+       else if (en < 0) {
+
+              grade ='Not available'
+}
+else if (en >100) {
+
+grade ='Not available'
+}
+        else {
+
+       	grade='F';
+       }
+       document.getElementById('rr').value=grade
+	}
+	
+
+
+	 function showGrade1(){
+      var math=parseFloat(document.getElementById('t').value);
+      var grade;
+       if ((math>=70) && (math<=100)) {
+
+       	grade="A";
+       }
+        else if ((math>=60 )&&(math<=70)) {
+
+       	grade="B";
+       }
+       else if ((math>=50)&&(math<=60)) {
+
+       	grade="C";
+       }
+       else if ((math>=45)&&(math<=50)) {
+
+       	grade="D";
+       }
+        else if ((math>=40)&&(math<=45)) {
+
+       	grade="E";
+       }       else if (math < 0) {
+
+grade ='Not available'
+}
+else if (math >100) {
+
+grade ='Not available'
+}
+        else  {
+
+       	grade='F';
+       }
+       document.getElementById('tt').value=grade
+	}
+	
+		function showGrade2(){
+      var chem=parseFloat(document.getElementById('y').value);
+      var grade;
+       if ((chem>=70) && (chem<=100)) {
+
+       	grade="A";
+       }
+        else if ((chem>=60 )&&(chem<=70)) {
+
+       	grade="B";
+       }
+       else if ((chem>=50)&&(chem<=60)) {
+
+       	grade="C";
+       }
+       else if ((chem>=45)&&(chem<=50)) {
+
+       	grade="D";
+       }
+        else if ((chem>=40)&&(chem<=45)) {
+
+       	grade="E";
+       }
+       else if (chem < 0) {
+
+grade ='Not available'
+}
+else if (chem >100) {
+
+grade ='Not available'
+}
+        else  {
+
+       	grade='F';
+       }
+       document.getElementById('yy').value=grade
+	}
+	function showGrade3(){
+      var bio=parseFloat(document.getElementById('u').value);
+      var grade;
+       if ((bio>=70) && (bio<=100)) {
+
+       	grade="A";
+       }
+        else if ((bio>=60 )&&(bio<=70)) {
+
+       	grade="B";
+       }
+       else if ((bio>=50)&&(bio<=60)) {
+
+       	grade="C";
+       }
+       else if ((bio>=45)&&(bio<=50)) {
+
+       	grade="D";
+       }
+        else if ((bio>=40)&&(bio<=45)) {
+
+       	grade="E";
+       }       else if (bio < 0) {
+
+grade ='Not available'
+}
+else if (bio >100) {
+
+grade ='Not available'
+}
+        else  {
+
+       	grade='F';
+       }
+       document.getElementById('uu').value=grade
+	}
+	function showGrade4(){
+      var fre=parseFloat(document.getElementById('i').value);
+      var grade;
+       if ((fre>=70) && (fre<=100)) {
+
+       	grade="A";
+       }
+        else if ((fre>=60 )&&(fre<=70)) {
+
+       	grade="B";
+       }
+       else if ((fre>=50)&&(fre<=60)) {
+
+       	grade="C";
+       }
+       else if ((fre>=45)&&(fre<=50)) {
+
+       	grade="D";
+       }
+        else if ((fre>=40)&&(fre<=45)) {
+
+       	grade="E";
+       }
+       else if (fre < 0) {
+
+grade ='Not available'
+}
+else if (fre >100) {
+
+grade ='Not available'
+}
+        else  {
+
+       	grade='F';
+       }
+       document.getElementById('ii').value=grade
+	}
+ function total(){
+      var en=parseFloat(document.getElementById('r').value);
+           var math=parseFloat(document.getElementById('t').value);
+ 		var chem=parseFloat(document.getElementById('y').value);
+ 		var bio=parseFloat(document.getElementById('u').value);
+ 		  var fre=parseFloat(document.getElementById('i').value);
+
+        var total=en+math+chem+bio+fre;
+        var average= total/5;
+       document.getElementById('tl').innerHTML=total
+        document.getElementById('av').innerHTML=average
+
+        if(total < 0){
+         document.getElementById('tl').innerHTML='INVALID'
+     }else if(total > 500){
+     	document.getElementById('tl').innerHTML='INVALID'
+      }
+
+      var average= total/5;
+      document.getElementById('av').innerHTML=average
+
+     if(average > 100 ){
+        document.getElementById('av').innerHTML='INVALID'
+     }
+
+
+
+
+        var rem=""
+        if (average < 0) {
+        	rem="invalid";
+
+        }else if(average >=50 && average < 100){
+      rem='Congratulations! You Passed';
+    }else if(average < 50){
+    		rem ='Sorry! You need to rewrite exam'
+    }
+        
+        else{
+        	rem="invalid"
+        }  document.getElementById('re').innerHTML=rem
+
+        if(average < 0){
+      document.getElementById('img1').src="";
+     }else if(average  <= 50){
+      document.getElementById('img1').src='emoji_failed.png'
+     }else if(average > 50 && average <= 100){
+     document.getElementById('img1').src='emoji_passed.png' 
+     }else{
+     document.getElementById('img1').src="";
+     }
+        
+        
+        }
+
+</script>
+</body>
+</html>
